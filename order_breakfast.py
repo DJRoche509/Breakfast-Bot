@@ -40,12 +40,14 @@ def order():
 def order_again():
     optA = 'yes'
     optB = 'no'
-    prompt = valid_input(f"Would you like to place another order? Please say '{optA}' or '{optB}'.\n", optA, optB)
-    if optA in prompt:
-        print_pause("Very good, I'm happy to take another order.")
-        order()
-    elif optB in prompt:
-        print_pause('OK, goodbye!')
+    while True:
+        prompt = valid_input(f"Would you like to place another order? Please say '{optA}' or '{optB}'.\n", optA, optB)
+        if optA in prompt:
+            print_pause("Very good, I'm happy to take another order.")
+            order()
+        elif optB in prompt:
+            print_pause('OK, goodbye!')
+            break
 
 # Main function to get the program started
 def order_breakfast():
